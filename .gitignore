@@ -26,6 +26,7 @@ faceswap/
 .vscode/
 switch_states.json
 /models
+media/
 install.bat
 /.claude
 *.bat
