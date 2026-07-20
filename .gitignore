@@ -27,6 +27,8 @@ faceswap/
 switch_states.json
 /models
 media/
+.codegraph/
+.cursor/
 install.bat
 /.claude
 *.bat
