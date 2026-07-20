@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Unix launchers must keep LF endings when the release archive is built on Windows.
+*.sh text eol=lf
+*.command text eol=lf
