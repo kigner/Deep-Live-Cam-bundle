@@ -5,6 +5,7 @@ import insightface
 import threading
 
 import modules.globals
+from modules.paths import ROOT_DIR
 from modules import imread_unicode, imwrite_unicode
 from tqdm import tqdm
 from modules.typing import Frame
@@ -19,7 +20,11 @@ DET_SIZE = (640, 640)
 
 
 def get_face_analyser() -> Any:
-    """Get face analyser with thread-safe initialization."""
+    """Get face analyser with thread-safe initialization.
+
+    Prefers models from `models/buffalo_l/` if present; falls back to
+    the default ``~/.insightface`` (auto-download) otherwise.
+    """
     global FACE_ANALYSER
 
     if FACE_ANALYSER is None:
@@ -30,8 +35,17 @@ def get_face_analyser() -> Any:
                     build_provider_config,
                 )
                 providers = build_provider_config()
+
+                # Prefer local models/insightface/ if buffalo_l models exist
+                local_model_root = os.path.join(ROOT_DIR, 'models', 'insightface')
+                if os.path.isdir(os.path.join(local_model_root, 'models', 'buffalo_l')):
+                    model_root = local_model_root
+                else:
+                    model_root = None  # default: ~/.insightface
+
                 FACE_ANALYSER = insightface.app.FaceAnalysis(
                     name='buffalo_l',
+                    root=model_root,
                     providers=providers,
                     allowed_modules=['detection', 'recognition', 'landmark_2d_106']
                 )

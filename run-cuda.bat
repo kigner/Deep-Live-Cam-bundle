@@ -1,1 +1,1 @@
-python run.py --execution-provider cuda
+venv\python.exe run.py --execution-provider cuda -l zh
