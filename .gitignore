@@ -31,4 +31,5 @@ media/
 .cursor/
 install.bat
 /.claude
+/CLAUDE.md
 *.bat
