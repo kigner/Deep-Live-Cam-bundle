@@ -42,5 +42,8 @@
     "Select Camera:": "选择摄像头",
     "All mappings cleared!": "所有映射均已清除!",
     "Mappings successfully submitted!": "成功提交映射！",
-    "Source x Target Mapper is already open.": "源 x 目标映射器已打开。"
+    "Source x Target Mapper is already open.": "源 x 目标映射器已打开。",
+    "Poisson Blend": "轮廓柔化",
+    "Transparency": "相似度",
+    "Sharpness": "锐化"
 }

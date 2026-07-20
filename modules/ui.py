@@ -582,8 +582,8 @@ class MainWindow(QMainWindow):
                                    "Keep extracted frames on disk after processing")
         self.sw_many_faces = make("many_faces", "Many faces",
                                   "Swap every detected face, not just the primary one")
-        self.sw_poisson = make("poisson_blend", "Poisson Blend",
-                               "Blend face edges smoothly using Poisson blending")
+        self.sw_poisson = make("poisson_blend", _("Poisson Blend"),
+                               _("Blend face edges smoothly using Poisson blending"))
         self.sw_color_fix = make("color_correction", "Fix Blueish Cam",
                                  "Fix blue/green color cast from some webcams")
         self.sw_show_fps = make("show_fps", "Show FPS",
